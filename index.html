@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>iPhone Mirroring trên macOS – Powered by Hải Đăng</title>
+<style>
+:root{--bg:#0a0f1e;--fg:#fff;color-scheme:dark light}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:var(--bg);font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--fg)}
+body{display:flex;align-items:center;justify-content:center}
+#f{position:relative;height:100vh;height:100dvh;width:min(100vw,calc(100dvh*9/16));aspect-ratio:9/16;max-height:100dvh;overflow:hidden;container-type:inline-size;background:#0b1530}
+svg{position:absolute;inset:0;width:100%;height:100%}
+#cap{position:absolute;left:4cqw;right:4cqw;bottom:13cqw;text-align:center;font-size:4.6cqw;font-weight:700;line-height:1.3;background:rgba(0,0,0,.45);padding:2cqw 3cqw;border-radius:3cqw;opacity:0;transition:opacity .3s}
+#ft{position:absolute;left:0;right:0;bottom:0;background:#071029;border-top:1px solid #1d4ed8;padding-bottom:env(safe-area-inset-bottom,0)}
+#mq{display:none;position:relative;overflow:hidden;height:6.5cqw;background:#0f2a66;align-items:center}
+#mq.on{display:flex}
+#mqi{white-space:nowrap;display:inline-flex;align-items:center;gap:1.5cqw;font-size:3.4cqw;animation:mv 13s linear infinite;padding-left:100%}
+@keyframes mv{to{transform:translateX(-100%)}}
+#mqi a{color:#ffd166;text-decoration:none;font-weight:700}
+#mqx{position:absolute;right:0;top:0;bottom:0;width:7cqw;border:0;background:#0f2a66;color:#fff;font-size:4cqw;cursor:pointer}
+#cr{text-align:center;font-size:3.2cqw;padding:1.4cqw 0;color:#9fb6ff;letter-spacing:.3px}
+#cr b{color:#fff}
+#snd{position:absolute;top:2cqw;right:2cqw;width:9cqw;height:9cqw;border-radius:50%;border:0;background:rgba(255,255,255,.18);color:#fff;font-size:4.6cqw;cursor:pointer;z-index:3}
+#go{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4cqw;background:rgba(5,10,30,.82);border:0;color:#fff;font-size:5cqw;cursor:pointer;font-family:inherit}
+#go i{width:20cqw;height:20cqw;border-radius:50%;background:#1d6bff;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:9cqw}
+</style>
+</head>
+<body>
+<div id="f">
+<svg viewBox="0 0 360 640" preserveAspectRatio="xMidYMid slice" font-family="-apple-system,Segoe UI,Roboto,Arial,sans-serif">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a1b4d"/><stop offset="1" stop-color="#0b3a8f"/></linearGradient>
+<linearGradient id="wl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7c3aed"/><stop offset="1" stop-color="#2563eb"/></linearGradient>
+</defs>
+<rect width="360" height="640" fill="url(#bg)"/>
+<text x="180" y="40" text-anchor="middle" font-size="25" font-weight="800" fill="#fff">iPhone Mirroring</text>
+<text x="180" y="62" text-anchor="middle" font-size="14" fill="#7dd3fc" letter-spacing="2">TRÊN macOS</text>
+
+<!-- Scene 1 -->
+<g id="g1">
+<rect x="60" y="190" width="70" height="140" rx="14" fill="#0d0d12" stroke="#cbd5e1" stroke-width="3"/>
+<rect x="66" y="198" width="58" height="124" rx="8" fill="url(#wl)"/>
+<rect x="165" y="210" width="140" height="95" rx="8" fill="#1b1f2a" stroke="#cbd5e1" stroke-width="3"/>
+<rect x="171" y="216" width="128" height="83" rx="4" fill="url(#wl)"/>
+<rect x="150" y="305" width="170" height="7" rx="3" fill="#cbd5e1"/>
+<line id="lk" x1="130" y1="260" x2="165" y2="260" stroke="#7dd3fc" stroke-width="3" stroke-dasharray="5 5"/>
+<circle id="pl" cx="148" cy="260" r="6" fill="#7dd3fc"/>
+<text x="180" y="400" text-anchor="middle" font-size="17" font-weight="700" fill="#fff">Điều khiển iPhone</text>
+<text x="180" y="424" text-anchor="middle" font-size="17" font-weight="700" fill="#fde68a">ngay trên máy Mac</text>
+</g>
+
+<!-- Scene 2 -->
+<g id="g2"></g>
+
+<!-- Mac scene -->
+<g id="gm">
+<rect x="30" y="95" width="300" height="195" rx="10" fill="#1b1f2a" stroke="#cbd5e1" stroke-width="4"/>
+<rect x="36" y="101" width="288" height="183" rx="5" fill="url(#wl)"/>
+<rect x="36" y="101" width="288" height="10" fill="rgba(255,255,255,.28)"/>
+<circle cx="45" cy="106" r="2.6" fill="#fff"/>
+<path d="M20 290h320l-8 10H28z" fill="#cbd5e1"/>
+<rect x="116" y="266" width="128" height="16" rx="6" fill="rgba(255,255,255,.3)"/>
+<rect x="122" y="269" width="10" height="10" rx="3" fill="#60a5fa"/>
+<rect x="138" y="269" width="10" height="10" rx="3" fill="#f59e0b"/>
+<g id="ic"><rect x="156" y="268" width="12" height="12" rx="3.5" fill="#22c55e"/><rect x="159.5" y="270" width="5" height="8" rx="1.2" fill="none" stroke="#fff" stroke-width="1"/></g>
+<rect x="174" y="269" width="10" height="10" rx="3" fill="#ec4899"/>
+<rect x="190" y="269" width="10" height="10" rx="3" fill="#a78bfa"/>
+<rect x="206" y="269" width="10" height="10" rx="3" fill="#f87171"/>
+<rect x="222" y="269" width="10" height="10" rx="3" fill="#38bdf8"/>
+<!-- file -->
+<g id="fl"><path d="M-9 -12h13l6 6v18h-19z" fill="#fff"/><path d="M4 -12v6h6" fill="#cbd5e1"/><text y="22" text-anchor="middle" font-size="7" fill="#fff">Hop-dong.pdf</text></g>
+<path id="tr" d="M62 205 Q120 160 180 190" fill="none" stroke="#fde68a" stroke-width="2" stroke-dasharray="4 4"/>
+<!-- notification -->
+<g id="nt"><rect x="205" y="116" width="116" height="30" rx="8" fill="rgba(255,255,255,.95)"/><circle cx="218" cy="131" r="6" fill="#22c55e"/><text x="229" y="128" font-size="7.5" font-weight="700" fill="#111">Tin nhắn mới</text><text x="229" y="139" font-size="7" fill="#444">từ iPhone → hiện trên Mac</text></g>
+<!-- phone window -->
+<g id="pw">
+<rect x="-40" y="-78" width="80" height="156" rx="13" fill="#0d0d12" stroke="#94a3b8" stroke-width="2"/>
+<g id="lo"><rect x="-35" y="-72" width="70" height="144" rx="9" fill="#111827"/><rect x="-8" y="-12" width="16" height="12" rx="2" fill="#fff"/><path d="M-5 -12v-5a5 5 0 0 1 10 0v5" fill="none" stroke="#fff" stroke-width="2"/><text y="22" text-anchor="middle" font-size="8" fill="#e5e7eb">Face ID / mật mã</text><circle id="fid" cx="0" cy="38" r="8" fill="none" stroke="#22c55e" stroke-width="2" stroke-dasharray="4 3"/></g>
+<g id="ho"><rect x="-35" y="-72" width="70" height="144" rx="9" fill="#312e81"/></g>
+<g id="ap"><rect x="-35" y="-72" width="70" height="144" rx="9" fill="#e2f6e9"/><rect x="-35" y="-72" width="70" height="26" rx="9" fill="#22c55e"/><text y="-54" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">Bản đồ</text><path d="M0 -4a12 12 0 1 1 .1 0l-.1 22z" fill="#ef4444" transform="translate(0 -10)"/><circle cy="-22" r="4" fill="#fff"/><text y="50" text-anchor="middle" font-size="7" fill="#166534">Ứng dụng iPhone</text><text y="60" text-anchor="middle" font-size="7" fill="#166534">chạy ngay trên Mac</text></g>
+<g id="ok"><circle r="16" fill="#22c55e"/><path d="M-7 0l5 5 9-10" fill="none" stroke="#fff" stroke-width="3"/><text y="30" text-anchor="middle" font-size="8" fill="#fff" font-weight="700">Đã nhận file</text></g>
+</g>
+<!-- cursor -->
+<g id="cu"><path d="M0 0l0 14 4-3 3 7 3-1-3-7 5 0z" fill="#fff" stroke="#000" stroke-width="1"/><circle id="rp" r="2" fill="none" stroke="#fff" stroke-width="2"/></g>
+</g>
+
+<!-- physical iPhone -->
+<g id="gi">
+<path id="w1" d="M150 312q30 14 60 0" fill="none" stroke="#7dd3fc" stroke-width="2.5"/>
+<path id="w2" d="M140 318q40 22 80 0" fill="none" stroke="#7dd3fc" stroke-width="2.5"/>
+<rect x="150" y="345" width="60" height="120" rx="11" fill="#0d0d12" stroke="#94a3b8" stroke-width="2.5"/>
+<rect x="155" y="351" width="50" height="108" rx="7" fill="#05070d"/>
+<rect x="172" y="395" width="16" height="12" rx="2" fill="#475569"/><path d="M175 395v-5a5 5 0 0 1 10 0v5" fill="none" stroke="#475569" stroke-width="2"/>
+<text x="180" y="487" text-anchor="middle" font-size="12" fill="#fde68a" font-weight="700">iPhone vẫn khoá, để gần Mac</text>
+</g>
+
+<!-- Scene 5 -->
+<g id="g5"></g>
+
+<!-- Scene 6 -->
+<g id="g6">
+<circle id="c6" cx="180" cy="270" r="46" fill="#22c55e"/><path d="M158 270l16 16 30-34" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round"/>
+<text x="180" y="370" text-anchor="middle" font-size="26" font-weight="800" fill="#fff">Liền mạch</text>
+<text x="180" y="400" text-anchor="middle" font-size="16" fill="#fde68a">Tiện lợi – Nhanh chóng</text>
+</g>
+</svg>
+
+<div id="cap"></div>
+<button id="snd" aria-label="Bật/tắt âm thanh">🔊</button>
+<div id="ft">
+<div id="mq"><span id="mqi"><a href="https://zalo.me/0939024202" target="_blank" rel="noopener" style="display:flex"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAMAAABiM0N1AAABgFBMVEXY4N+KdEt0pcKooZreojfWpEgeGRskLUAATKR9UBrCfiE7VlwZiOBhi62vcBuhj2CBqsIAAAAVV5EYaKYZYpsOSocbdLEld7ERRXjr5NgKOG7j3NDa1csqZpULKFAoh8eveCwja6YogrvLy8YVM1WPeEvIiCpMh61vd29MdZABLGmNWBiRaC0NXKcmWYotk9Bvho9zRhLTlDESHDEpOEovRFczVXLRx7pWNA9Haoi6hDErSmlPaXVvlrGutbc3JBRxVS6yxc8nKTJIKg5xaVBmOw2UhFfw7OKMiWyphkkcgsQ0MzIoecVSWFR3g3SUpbEXIzdHe6aPlo8oGhBKW2iPtMmpvMb38uYXd8lIOCi3lFAAOIQ1dZtGSUpnSiiJmaejZhrFl0ccU3tWRjJZhJR6dVaYYRuGiIqTknQbQVw7YXl5YTppe4url2MRbMFKi8RYkrFja2Z3obqYcjikbCSnqKgAHUoegb0mHiBcY1tYdXtJmM1qkZWDTRCIWyOesbo8g4t3AAAAgHRSTlP//////////////////////wD//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////wpF9LYAAAuDSURBVHjanVgFYxtHE3XK7YdduN3bQzEzWLJsy8yMscPM1CRl+Ovfm1XapmnwO4NO0u27gTdvZm/s67ceD6ZW6o/qj3O3p/ZO337l2Ju/2luJcv0NJrnknEWV3Uf39/Y+HGiqHkRMynQxbOEnDIuhkWYjUb/04IOAvulzXjRha2e4vz/cHw6H8/v7rVbLFBMbwd7t9waqs7M6NK3WsNcrzcws3CuXcHzZ6M1/3wqLJqps3X4voDN8wxTD/eFioxRvXVcqERTqt+vXrxfyN2YWh5+Fpqg28p++GyinimZnv1cqr67ezjmc4eAOx8GEKCyVGvPf70gT/LT1DqC9vmThZ73S0s/Xg6RitNxRXAhBgEyyenz5l16rxSrdW/95G1B+IxG2ho3Mz4rsEII7FelIJrhSymESlj1eWXpa6oXfyqh6+magx4Ex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" alt="Ngọc Út" style="width:5.4cqw;height:5.4cqw;border-radius:50%;display:block"></a><a href="https://zalo.me/0939024202" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:1.5cqw">Ngọc Út hải sản Gành Hào - liên hệ ngay zalo 0939024202</a></span><button id="mqx" aria-label="Đóng">×</button></div>
+<div id="cr">Powered by <b>Hải Đăng</b></div>
+</div>
+<audio id="au" playsinline style="display:none"></audio>
+<button id="go"><i>▶</i>Bấm để phát video (có âm thanh)</button>
+</div>
+
+<script>
+var $=function(i){return document.getElementById(i)},NS="http://www.w3.org/2000/svg";
+var D=40,cl=function(x){return Math.max(0,Math.min(1,x))},pr=function(t,a,b){return cl((t-a)/(b-a))},ez=function(x){return x*x*(3-2*x)};
+function vis(g,t,a,b){g.style.opacity=cl((t-a)/.4)*cl((b-t)/.4)}
+// build chips
+function chips(g,items,y0,st,h,fs){items.forEach(function(s,i){var e=document.createElementNS(NS,"g");e.innerHTML='<rect x="30" y="0" width="300" height="'+h+'" rx="12" fill="rgba(255,255,255,.14)" stroke="rgba(255,255,255,.35)"/><circle cx="52" cy="'+h/2+'" r="10" fill="#22c55e"/><path d="M47 '+(h/2)+'l4 4 7-8" fill="none" stroke="#fff" stroke-width="2.4"/><text x="72" y="'+(h/2+5)+'" font-size="'+fs+'" font-weight="700" fill="#fff">'+s+'</text>';e.dataset.y=y0+i*st;g.appendChild(e)})}
+chips($("g2"),["macOS 15 Sequoia trở lên","iOS 18 trở lên","Cùng một Apple ID","Bật Wi-Fi và Bluetooth","iPhone khoá màn hình, gần Mac"],100,56,44,14);
+chips($("g5"),["⌘ 1  Màn hình chính","⌘ 2  Chuyển ứng dụng","⌘ 3  Tìm Spotlight"],350,52,42,15);
+var HO=$("ho"),gx=-31,gy=-58,cols=["#ef4444","#22c55e","#3b82f6","#f59e0b","#a855f7","#14b8a6","#ec4899","#64748b","#f97316","#0ea5e9","#84cc16","#e11d48"];
+cols.forEach(function(c,i){var r=document.createElementNS(NS,"rect");r.setAttribute("x",gx+(i%3)*22);r.setAttribute("y",gy+Math.floor(i/3)*24);r.setAttribute("width",16);r.setAttribute("height",16);r.setAttribute("rx",4);r.setAttribute("fill",c);HO.appendChild(r)});
+// cursor keyframes [t,x,y]
+var K=[[12,300,160],[14.6,180,274],[17,180,205],[18.6,150,215],[21,179,141],[25,200,200],[26,62,205],[28,180,190],[29.5,300,250]];
+function cur(t){if(t<=K[0][0])return[K[0][1],K[0][2]];for(var i=1;i<K.length;i++)if(t<=K[i][0]){var a=K[i-1],b=K[i],p=ez(pr(t,a[0],b[0]));return[a[1]+(b[1]-a[1])*p,a[2]+(b[2]-a[2])*p]}return[K.at(-1)[1],K.at(-1)[2]]}
+var CP=[[0,"iPhone Mirroring trên macOS: điều khiển iPhone ngay trên máy Mac"],[5,"Điều kiện: macOS Sequoia 15 và iOS 18 trở lên, cùng Apple ID"],[12,"Mở ứng dụng iPhone Mirroring trong Dock"],[16,"Mở khoá bằng Face ID hoặc mật mã"],[20,"Dùng chuột và bàn phím để mở ứng dụng iPhone"],[24,"Thông báo iPhone hiện ngay trên Mac"],[26,"Kéo thả file giữa Mac và iPhone"],[29,"Phím tắt: Command 1, 2, 3 cho Màn hình chính, Chuyển ứng dụng và Spotlight"],[36,"iPhone trên Mac. Liền mạch, tiện lợi!"]];
+// audio
+var ac,mg,muted=false,run=false,t0=0,prev=0,ci=-1,step=0,nx=0,tm=null,mqClosed=false;
+function tone(f,s,d,ty,v){var o=ac.createOscillator(),g=ac.createGain();o.type=ty;o.frequency.setValueAtTime(f,s);g.gain.setValueAtTime(0.0001,s);g.gain.linearRampToValueAtTime(v,s+.02);g.gain.exponentialRampToValueAtTime(.0001,s+d);o.connect(g);g.connect(mg);o.start(s);o.stop(s+d+.05)}
+function pop(){var n=ac.currentTime,o=ac.createOscillator(),g=ac.createGain();o.frequency.setValueAtTime(300,n);o.frequency.exponentialRampToValueAtTime(900,n+.12);g.gain.setValueAtTime(.3,n);g.gain.exponentialRampToValueAtTime(.001,n+.18);o.connect(g);g.connect(mg);o.start(n);o.stop(n+.2)}
+function clk(){tone(1200,ac.currentTime,.05,"square",.12)}
+function ding(){var n=ac.currentTime;tone(988,n,.4,"sine",.25);tone(1319,n+.1,.5,"sine",.22)}
+function blip(){tone(660+Math.random()*200,ac.currentTime,.12,"triangle",.18)}
+var EV=[[5,pop],[5.3,blip],[6.2,blip],[7.1,blip],[8,blip],[8.9,blip],[12,pop],[15,clk],[15.3,pop],[18.6,ding],[20,pop],[21.5,clk],[22,pop],[24,ding],[26,clk],[28.2,pop],[29,pop],[30,blip],[31.5,blip],[33,blip],[36,ding]];
+var NT=[261.6,293.7,329.6,392,440,523.3,440,392],BS=[130.8,110,87.3,98.0];
+function sched(){if(!run)return;while(nx<ac.currentTime+.4){var s=step++,i=[0,2,1,3,2,4,3,5][s%8]; if(s%2===0)tone(NT[i]*(s%16<8?1:1),nx,.35,"triangle",.22);if(s%8===0)tone(BS[Math.floor(s/8)%4],nx,1.6,"sine",.3);if(s%4===2)tone(NT[(s*3)%6]*2,nx,.2,"sine",.08);nx+=.25}}
+function start(){if(!ac){ac=new (window.AudioContext||window.webkitAudioContext)();mg=ac.createGain();mg.gain.value=muted?0:1;var ds=ac.createMediaStreamDestination();mg.connect(ds.stream?ds:ac.destination);var au=$("au");au.srcObject=ds.stream;var pp=au.play();if(pp&&pp.catch)pp.catch(function(){mg.disconnect();mg.connect(ac.destination)});try{navigator.audioSession.type="playback"}catch(e){}}if(ac.state==="suspended")ac.resume();run=true;t0=performance.now();prev=-1;ci=-1;nx=ac.currentTime+.05;pop();clearInterval(tm);tm=setInterval(sched,100);$("go").style.display="none";requestAnimationFrame(loop)}
+$("go").onclick=start;
+$("snd").onclick=function(){muted=!muted;this.textContent=muted?"🔇":"🔊";if(mg)mg.gain.value=muted?0:1;};
+$("mqx").onclick=function(){mqClosed=true;$("mq").classList.remove("on")};
+function loop(){if(!run)return;var t=(performance.now()-t0)/1000;if(t>=D){prev=-1;ci=-1;t0=performance.now();t=0;nx=ac.currentTime+.05}
+EV.forEach(function(e){if(prev<e[0]&&e[0]<=t&&!muted)e[1]()});prev=t;
+var c=0;CP.forEach(function(p,i){if(t>=p[0])c=i});if(c!==ci){ci=c;var el=$("cap");el.textContent=CP[c][1];el.style.opacity=1}
+// scenes
+vis($("g1"),t,-1,5);
+var g2=$("g2");vis(g2,t,5,12);[].forEach.call(g2.children,function(e,i){var p=ez(pr(t,5.3+i*.9,5.9+i*.9));e.setAttribute("transform","translate("+(1-p)*-60+","+e.dataset.y+")");e.style.opacity=p});
+var m=$("gm");vis(m,t,11.6,36.4);
+var s=ez(pr(t,15.2,16.2));$("pw").setAttribute("transform","translate(180,190) scale("+s+")");$("pw").style.opacity=s;
+$("lo").style.opacity=t<18.6?1:0;$("ho").style.opacity=(t>=18.6&&t<22)||(t>=25.5)?1:0;$("ap").style.opacity=(t>=22&&t<25.5)?1:0;
+$("fid").setAttribute("transform","rotate("+(t*200)+" 0 38)");
+$("ok").setAttribute("transform","translate(0,-5)");$("ok").style.opacity=t>=28.3&&t<29.6?1:0;
+var ib=t>13&&t<14.6?Math.abs(Math.sin((t-13)*9))*4:0;$("ic").setAttribute("transform","translate(0,"+(-ib)+")");
+var cp=cur(t);$("cu").setAttribute("transform","translate("+cp[0]+","+cp[1]+")");$("cu").style.opacity=t>=12.5&&t<29.5?1:0;
+var rr=0;[15,21.5,26,28.2].forEach(function(k){if(t>k&&t<k+.5)rr=(t-k)*24});$("rp").setAttribute("r",rr);$("rp").style.opacity=rr?1:0;
+var fv=t>=25&&t<28.3,fp=ez(pr(t,26,28)),fx=62+(180-62)*fp,fy=205-15*Math.sin(Math.PI*fp)*3+(190-205)*fp;
+$("fl").setAttribute("transform","translate("+(t<26?62:fx)+","+(t<26?205:fy)+") scale("+(1-.7*pr(t,27.6,28.2))+")");$("fl").style.opacity=fv?1:0;$("tr").style.opacity=t>=26&&t<28.3?1:0;
+var np=ez(pr(t,24,24.6)),nf=cl((27-t)/.5);$("nt").setAttribute("transform","translate("+(1-np)*130+",0)");$("nt").style.opacity=t>=24&&t<25.6?np*cl((25.6-t)/.3):0;
+var gi=$("gi");vis(gi,t,12,29.5);var wv=Math.sin(t*5);$("w1").style.opacity=.5+.5*wv;$("w2").style.opacity=.5-.5*wv;
+vis($("g5"),t,29,36);[].forEach.call($("g5").children,function(e,i){var p=ez(pr(t,29.6+i*1.4,30.2+i*1.4));e.setAttribute("transform","translate("+(1-p)*60+","+e.dataset.y+")");e.style.opacity=p});
+vis($("g6"),t,36,40.5);$("c6").setAttribute("r",46*(1+.06*Math.sin(t*6)));
+if(t>=D/2&&!mqClosed)$("mq").classList.add("on");if(t<D/2&&!mqClosed)$("mq").classList.remove("on");
+requestAnimationFrame(loop)}
+// static first frame
+[$("gm"),$("gi"),$("g2"),$("g5"),$("g6")].forEach(function(g){g.style.opacity=0});
+</script>
+</body>
+</html>
